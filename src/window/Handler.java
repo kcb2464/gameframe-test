@@ -27,13 +27,16 @@ public class Handler {
 
    private Camera cam;
 
-   private BufferedImage level2 = null;
+   private BufferedImage level = null, level2 = null;
 
    public Handler(Camera cam) {
       this.cam = cam;
 
       BufferedImageLoader loader = new BufferedImageLoader();
+      level = loader.loadImage("/level.png");
       level2 = loader.loadImage("/level2.png"); //loading level 2
+
+      loadImageLevel(level);
    }
 
    public void tick() {
